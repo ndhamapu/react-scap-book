@@ -1,0 +1,77 @@
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### file extentions to filter ###
+*.db
+*.log
+*.jar
+*.zip
+
+
+### NetBeans ###
+**/nbproject/private/**
+**/nbbuild/**
+**/dist/**
+**/nbdist/**
+**/.nb-gradle/**
+**/build/**
+
+### mvn target ###
+
+**/target/**
+**/node_modules/**
+**/.vscode/**
+**/.settings/**
+**/.mvn/**
+
+--------
+
+# compiled output  
+**/dist
+**/tmp 
+**/out-tsc
+  
+# dependencies  
+**/node_modules  
+  
+# IDEs and editors  
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+  
+# IDE - VSCode  
+.vscode/*
+!.vscode/settings.json  
+!.vscode/tasks.json  
+!.vscode/launch.json  
+!.vscode/extensions.json  
+  
+# misc  
+/.sass-cache
+/connect.lock
+/coverage  
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+  
+# System Files  
+.DS_Store  
+
