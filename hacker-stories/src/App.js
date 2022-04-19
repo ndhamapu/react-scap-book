@@ -27,9 +27,18 @@ const listOfAuthors = [
     objectID: 1,
   },
 ];
-
-const ListAuthors = () => (<ul>
-  {listOfAuthors.map(function (item) {
+/**
+ * 
+ * @returns  does the map function return result for each element in the array?
+ * it does but a function cannot return more than once for a call.
+ * <p><b>the array.map function returns a 'new' array with modified elements  </b></p>
+ */
+const ListAuthors = () => 
+(
+<ul>
+  {
+    listOfAuthors.map(function (item) 
+    {
     return <li key={item.objectID}>
       <span>
         <a href={item.url}>{item.title}</a>
@@ -42,22 +51,60 @@ const ListAuthors = () => (<ul>
       <span>
         {item.title}
       </span>
-
-
       <span>
         {item.num_comments}
-
       </span>
     </li>;
   })}
 
-</ul>);
+</ul>
+);
 
 
+
+/**
+ * 
+ * @returns  does the map function return result for each element in the array?
+ * it does but a function cannot return more than once for a call.
+ * <p><b>the array.map function returns a 'new' array with modified elements  </b></p>
+ */
+ const ListAuthorsInProps = () => 
+ (
+ <ul>
+   {
+     listOfAuthors.map(function (props) 
+     {
+     return <li key={props.item.objectID}>
+       <span>
+         <a href={props.item.url}>{props.item.title}</a>
+ 
+       </span>
+       <span>
+         {props.item.author}
+ 
+       </span>
+       <span>
+         {props.item.title}
+       </span>
+       <span>
+         {props.item.num_comments}
+       </span>
+     </li>;
+   })}
+ 
+ </ul>
+ );
+
+ 
+/**
+ * 
+ * @returns common mistake is to pass return type of function instead of the function itself
+ * 
+ */
 const Search = ()=> {
   
   const handleChange = (event) => {
-    console.log(event);
+    console.log(event.target.value);
   }
 
     return (
@@ -76,7 +123,7 @@ function App() {
       <h1> title goes here</h1>
       <Search />
       <hr />
-      <ListAuthors />
+      <ListAuthorsInProps />
 
 
     </div>
