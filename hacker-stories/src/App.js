@@ -64,30 +64,27 @@ const ListAuthors = () =>
 
 /**
  * 
- * @returns  does the map function return result for each element in the array?
- * it does but a function cannot return more than once for a call.
- * <p><b>the array.map function returns a 'new' array with modified elements  </b></p>
+ * This function reads the details of the listOfAuthors array via properties
  */
- const ListAuthorsInProps = () => 
+ const ListAuthorsInProps = (props) => 
  (
  <ul>
    {
-     listOfAuthors.map(function (props) 
+     props.list.map(function (item) 
      {
-     return <li key={props.item.objectID}>
+     return <li key={item.objectID}>
        <span>
-         <a href={props.item.url}>{props.item.title}</a>
+         <a href={item.url}>{item.title}</a>
+        </span>
+       <span>
+         {item.author}
  
        </span>
        <span>
-         {props.item.author}
- 
+         {item.title}
        </span>
        <span>
-         {props.item.title}
-       </span>
-       <span>
-         {props.item.num_comments}
+         {item.num_comments}
        </span>
      </li>;
    })}
@@ -123,8 +120,9 @@ function App() {
       <h1> title goes here</h1>
       <Search />
       <hr />
-      <ListAuthorsInProps />
-
+      <ListAuthorsInProps list={listOfAuthors} />
+      <hr />
+      <ListAuthors />
 
     </div>
   );
