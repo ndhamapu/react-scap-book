@@ -9,7 +9,10 @@ const welcome = {
 
 }
 
-const listOfAuthors = [
+/**
+ * listOfAuthorsGS = global scope value, other list has component scope i.e defined inside App
+ */
+const listOfAuthorsGS = [
   {
     title: 'React',
     url: 'https://reactjs.org/',
@@ -27,6 +30,7 @@ const listOfAuthors = [
     objectID: 1,
   },
 ];
+
 /**
  * 
  * @returns  does the map function return result for each element in the array?
@@ -37,7 +41,7 @@ const ListAuthors = () =>
 (
 <ul>
   {
-    listOfAuthors.map(function (item) 
+    listOfAuthorsGS.map(function (item) 
     {
     return <li key={item.objectID}>
       <span>
@@ -70,7 +74,7 @@ const ListAuthors = () =>
  (
  <ul>
    {
-     props.list.map(function (item) 
+    props.list.map(function (item) 
      {
      return <li key={item.objectID}>
        <span>
@@ -96,7 +100,7 @@ const ListAuthors = () =>
 /**
  * 
  * @returns common mistake is to pass return type of function instead of the function itself
- * 
+ * so onChange={handleChange} is correct onChange={handleChange()} is wrong.
  */
 const Search = ()=> {
   
@@ -115,6 +119,30 @@ const Search = ()=> {
 
 
 function App() {
+
+  /**
+   * Same As listOfAuthorsGS but the scope is limited to App component
+   */
+  const listOfAuthors = [
+    {
+      title: 'React',
+      url: 'https://reactjs.org/',
+      author: 'Jordan Walke',
+      num_comments: 3,
+      points: 4,
+      objectID: 0,
+    },
+    {
+      title: 'Redux',
+      url: 'https://redux.js.org/',
+      author: 'Dan Abramov, Andrew Clark',
+      num_comments: 2,
+      points: 5,
+      objectID: 1,
+    },
+  ];
+
+
   return (
     <div>
       <h1> title goes here</h1>
