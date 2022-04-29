@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
 
 
 const welcome = {
@@ -104,17 +105,28 @@ const ListAuthors = () =>
  */
 const Search = ()=> {
   
+  /**
+   * React.useState("");  initialised the initial state as empty this returns
+   * 1. first entry return the current state i.e searchTerm
+   * 2. represents a 'function' to update this state with something.
+   */
+  const [searchTerm,setSearchTerm] =React.useState('');
+  
   const handleChange = (event) => {
-    console.log(event.target.value);
-  }
+
+    setSearchTerm(event.target.value);
+  };
 
     return (
     <div>
       <label htmlFor="search">Search: </label>
       <input id="search" type="text" onChange={handleChange} />
+      <p>
+        Searching for a value <strong>{searchTerm}</strong>
+      </p>
     </div>
 );
-}
+};
 
 
 
