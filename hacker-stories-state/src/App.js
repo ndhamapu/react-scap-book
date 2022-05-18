@@ -101,7 +101,7 @@ const ListAuthors = () =>
 /**
  * 
  * @returns common mistake is to pass return type of function instead of the function itself
- * so onChange={handleChange} is correct onChange={handleChange()} is wrong.
+ * so onChange={handleChange} is correct, onChange={handleChange()} is wrong.
  */
 const Search = ()=> {
   
@@ -113,7 +113,7 @@ const Search = ()=> {
   const [searchTerm,setSearchTerm] =React.useState('');
   
   const handleChange = (event) => {
-
+   
     setSearchTerm(event.target.value);
   };
 
